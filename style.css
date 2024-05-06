@@ -1,13 +1,15 @@
-*{
+/* Base styles */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 
-.hero{
-  width:100%;
-  height:100vh;
+/* Hero section */
+.hero {
+  width: 100%;
+  height: 100vh;
   background-image: linear-gradient(rgba(12,3,51,0.3), rgba(12,3,51,0.3));
   position: relative;
   padding: 0 5%;
@@ -16,57 +18,87 @@
   justify-content: center;
 }
 
-nav{
+/* Navigation bar */
+nav {
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  padding: 20px 8%;
+  padding: 10px 5%; /* Adjusted padding */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-nav .logo{
-  width: 80px
+nav .logo {
+  width: 10%; /* Use percentage for relative width */
 }
 
-nav ul li{
+nav ul {
+  display: flex; /* Use flexbox for navigation links */
+  align-items: center;
+}
+
+nav ul li {
   list-style: none;
-  display: inline-block;
-  margin-left: 40px;
+  margin-left: 20px; /* Reduce margin for closer spacing */
 }
 
-nav ul li a{
+nav ul li a {
+  color: white;
+  font-size: 1rem; /* Use rem for relative font size */
   text-decoration: none;
-  color: #fff;
-  font-size: 17px
-}
-
-.content{
-  text-align: center;
-}
-
-.content h1{
-  font-size: 160px;
-  color: #fff;
   font-weight: 600;
 }
 
-.content h2{
-  text-decoration: none;
-  display: inline-block;
-  color: #fff;
-  font-size: 24px;
-  border: 2px solid #fff;
-  padding: 14px 70px;
-  border-radius: 50px;
+/* Content section */
+.content {
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 3rem; /* Adjusted relative font size */
+  color: white;
+  font-weight: 600;
+}
+
+.content h2 {
+  font-size: 1.5rem; /* Adjusted relative font size */
+  color: white;
+  padding: 10px 20px; /* Adjusted padding */
+  border-radius: 10px; /* Rounded corners */
   margin-top: 20px;
 }
 
-.back-video{
+/* Video background */
+.back-video {
   position: absolute;
   right: 0;
   bottom: 0;
-  z-index: -1; 
+  z-index: -1;
+  width: 100%; /* Ensure video scales to width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  nav {
+      padding: 10px 2%; /* Reduce padding on smaller screens */
+  }
+
+  nav .logo {
+      width: 20%; /* Adjust logo size */
+  }
+
+  nav ul li {
+      margin-left: 10px; /* Reduce margin */
+  }
+
+  .content h1 {
+      font-size: 2rem; /* Adjust header font size */
+  }
+
+  .content h2 {
+      font-size: 1.2rem; /* Adjust subheader font size */
+  }
 }
